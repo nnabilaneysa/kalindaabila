@@ -99,7 +99,8 @@ const galleryData = {
       { label: 'After Effects.', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
     ]
   },
-  
+};
+
 // ─── GALLERY PAGE LOGIC ───────────────────────────────────────────────────────
 const galleryPage     = document.getElementById('gallery-page');
 const galleryTitle    = document.getElementById('galleryTitle');
