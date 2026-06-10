@@ -198,66 +198,33 @@ function showNotif(msg, isError = false) {
   setTimeout(() => notif.classList.remove('show'), 3500);
 }
 
-// ─── CONTACT FORM ─────────────────────────────────────────────────────────────
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn     = document.getElementById('submitBtn');
-  const spinner = document.getElementById('btnSpinner');
-  const btnText = document.getElementById('btnText');
+// ─── FORM STATUS (ganti showNotif) ───────────────────────────────────────────
+function showFormStatus(isSuccess, title, desc) {
+  const el   = document.getElementById('formStatus');
+  const icon = document.getElementById('formStatusIcon');
+  const t    = document.getElementById('formStatusTitle');
+  const d    = document.getElementById('formStatusDesc');
 
-  btn.classList.add('loading');
-  spinner.style.display = 'block';
-  btnText.style.display = 'none';
+  el.className = 'form-status show ' + (isSuccess ? 'success' : 'error');
+  icon.textContent = isSuccess ? '✓' : '✕';
+  t.textContent = title;
+  d.textContent = desc;
 
-  const fromName  = document.getElementById('fromName').value;
-  const fromEmail = document.getElementById('fromEmail').value;
-  const subject   = document.getElementById('subject').value;
-  const message   = document.getElementById('message').value;
-
-  if (!fromName || !fromEmail || !subject || !message) {
-    showNotif('Semua bidang harus diisi!', true);
-    btn.classList.remove('loading');
-    spinner.style.display = 'none';
-    btnText.style.display = 'block';
-    return;
-  }
-  if (!fromEmail.includes('@') || !fromEmail.includes('.')) {
-    showNotif('Email tidak valid!', true);
-    btn.classList.remove('loading');
-    spinner.style.display = 'none';
-    btnText.style.display = 'block';
-    return;
-  }
-
-  const params = {
-    from_name:  fromName,
-    from_email: fromEmail,
-    subject:    subject,
-    message:    message,
-    to_email:   'nnabilaneysa@gmail.com',
-    reply_to:   fromEmail
-  };
-
-  await new Promise(r => setTimeout(r, 2200));
-
-  try {
-    await emailjs.send('service_wi5a2tl', 'template_rpygu2g', params);
-    btn.classList.remove('loading');
-    btn.classList.add('success');
-    spinner.style.display = 'none';
-    btnText.style.display = 'block';
-    btnText.textContent = 'Pesan Terkirim!';
-    showNotif('Pesan berhasil terkirim!');
-    document.getElementById('contactForm').reset();
+  if (isSuccess) {
     setTimeout(() => {
-      btn.classList.remove('success');
-      btnText.textContent = 'Submit';
-    }, 4000);
-  } catch (err) {
-    console.error('EmailJS error:', err);
-    showNotif('Gagal mengirim. Coba lagi ya!', true);
-    btn.classList.remove('loading');
-    spinner.style.display = 'none';
-    btnText.style.display = 'block';
+      el.classList.remove('show');
+    }, 5000);
   }
-});
+}
+
+// validasi kosong:
+showFormStatus(false, 'Formulir tidak lengkap', 'Semua bidang harus diisi.');
+
+// email tidak valid:
+showFormStatus(false, 'Email tidak valid', 'Periksa kembali format email kamu.');
+
+// sukses kirim:
+showFormStatus(true, 'Pesan terkirim!', 'Terima kasih, akan segera dibalas.');
+
+// gagal kirim:
+showFormStatus(false, 'Gagal mengirim', 'Coba lagi beberapa saat ya.');
