@@ -99,46 +99,7 @@ const galleryData = {
       { label: 'After Effects.', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
     ]
   },
-  socmed: {
-    title: ' Design', titleSpan: ' Artifacts',
-    subtitle: 'Case studies in standalone logo development and package design.',
-    links: [
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-    ]
-  },
-  illustration: {
-    title: 'Vector', titleSpan: 'Art',
-    subtitle: 'Scalable digital graphics exploring 2D styling and iconography.',
-    links: [
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-    ]
-  },
-  ui: {
-    title: 'Works on', titleSpan: 'Paper',
-    subtitle: 'A collection of hand-drawn sketches.',
-    links: [
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-    ]
-  },
-  other: {
-    title: 'Miscellaneous', titleSpan: 'Works',
-    subtitle: 'Eksplorasi kreatif dan eksperimen desain lainnya.',
-    links: [
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-      { label: 'YouTube Video', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
-    ]
-  }
-};
-
+  
 // ─── GALLERY PAGE LOGIC ───────────────────────────────────────────────────────
 const galleryPage     = document.getElementById('gallery-page');
 const galleryTitle    = document.getElementById('galleryTitle');
