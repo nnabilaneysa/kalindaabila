@@ -96,7 +96,6 @@ const galleryData = {
       { label: 'Vector Art (Figma).', url: 'https://drive.google.com/drive/folders/1xdNXNZqdlAel0mIHdMh4EqJprwv-d7zW?usp=sharing' },
       { label: 'Sketches (Paper).', url: 'https://drive.google.com/drive/folders/1utxVZLsFDaPuOUt5c3FaWXOX01S9sM49?usp=sharing' },
       { label: 'Ibis Paint.', url: 'https://drive.google.com/drive/folders/1XsmaMu6VDAKemxv3hjZRSNtEFZHtaSzF?usp=sharing' },
-      { label: 'After Effects.', url: 'https://www.youtube.com/watch?v=ZPWtWzZNBdM' },
     ]
   },
 };
